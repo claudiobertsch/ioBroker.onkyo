@@ -1,8 +1,12 @@
 {
   "common": {
     "name": "onkyo",
-    "version": "2.0.2",
+    "version": "2.0.3",
 	"news": {
+        "2.0.3": {
+            "en": "adding zone3 support",
+            "de": "Zone 3 hinzugefügt"
+        },
 			"2.0.2": {
                 "en": "fix double .js",
                 "de": "Doppelte .js entfernt"
@@ -86,7 +90,8 @@
         "avrAddress":  "",
         "avrPort": 60128,
 		"maxvolzone1": 40,
-		"maxvolzone2":40
+      "maxvolzone2": 40,
+      "maxvolzone3": 40
     },
   "objects": [],
 "instanceObjects": [
@@ -182,99 +187,196 @@
                 "write": true
             }
         },
-		
-		{
-            "_id": "Zone2",
-            "type": "object",
-            "common": {
-                "name":  "Zone2",
-                "type":  "object",
-                "role":  "",
-                "read":  true,
-                "write": false,
-                "def":   ""
-            },
-            "native": {
-                "command": "Zone2"
-            }
+
+    {
+        "_id": "Zone2",
+        "type": "object",
+        "common": {
+            "name":  "Zone2",
+            "type":  "object",
+            "role":  "",
+            "read":  true,
+            "write": false,
+            "def":   ""
         },
-		{
-            "_id": "Zone2.Power",
-            "type": "state",
-            "common": {
-                "name":  "Power",
-                "type":  "boolean",
-                "role":  "switch.power.zone",
-                "read":  true,
-                "write": true
-            }
+        "native": {
+            "command": "Zone2"
+        }
+    },
+
+    {
+        "_id": "Zone3",
+        "type": "object",
+        "common": {
+            "name":  "Zone3",
+            "type":  "object",
+            "role":  "",
+            "read":  true,
+            "write": false,
+            "def":   ""
         },
-		{
-            "_id": "Zone2.Volume",
-            "type": "state",
-            "common": {
-                "name":  "Volume",
-                "type":  "string",
-                "role":  "level.volume",
-                "read":  true,
-                "write": true
-            }
-        },
-		{
-            "_id": "Zone2.Tune",
-            "type": "state",
-            "common": {
-                "name":  "Tune",
-                "type":  "string",
-                "role":  "state",
-                "read":  true,
-                "write": true
-            }
-        },
-		{
-            "_id": "Zone2.NetRadioPreset",
-            "type": "state",
-            "common": {
-                "name":  "Net Radio Preset",
-                "type":  "string",
-                "role":  "state",
-                "read":  true,
-                "write": true
-            }
-        },
-		{
-            "_id": "Zone2.InputSelect",
-            "type": "state",
-            "common": {
-                "name":  "Input Select",
-                "type":  "string",
-                "role":  "media.input",
-                "read":  true,
-                "write": true
-            }
-        },
-		{
-            "_id": "Zone2.Mute",
-            "type": "state",
-            "common": {
-                "name":  "Input Mute",
-                "type":  "string",
-                "role":  "media.mute",
-                "read":  true,
-                "write": true
-            }
-        },
-		{
-            "_id": "Zone2.TunerPreset",
-            "type": "state",
-            "common": {
-                "name":  "Tuner Preset",
-                "type":  "string",
-                "role":  "state",
-                "read":  true,
-                "write": true
-            }
-        },
+        "native": {
+            "command": "Zone3"
+        }
+    },
+
+    {
+        "_id": "Zone2.Power",
+        "type": "state",
+        "common": {
+            "name":  "Power",
+            "type":  "boolean",
+            "role":  "switch.power.zone",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone2.Volume",
+        "type": "state",
+        "common": {
+            "name":  "Volume",
+            "type":  "string",
+            "role":  "level.volume",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone2.Tune",
+        "type": "state",
+        "common": {
+            "name":  "Tune",
+            "type":  "string",
+            "role":  "state",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone2.NetRadioPreset",
+        "type": "state",
+        "common": {
+            "name":  "Net Radio Preset",
+            "type":  "string",
+            "role":  "state",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone2.InputSelect",
+        "type": "state",
+        "common": {
+            "name":  "Input Select",
+            "type":  "string",
+            "role":  "media.input",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone2.Mute",
+        "type": "state",
+        "common": {
+            "name":  "Input Mute",
+            "type":  "string",
+            "role":  "media.mute",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone2.TunerPreset",
+        "type": "state",
+        "common": {
+            "name":  "Tuner Preset",
+            "type":  "string",
+            "role":  "state",
+            "read":  true,
+            "write": true
+        }
+    },
+
+    {
+        "_id": "Zone3.Power",
+        "type": "state",
+        "common": {
+            "name":  "Power",
+            "type":  "boolean",
+            "role":  "switch.power.zone",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone3.Volume",
+        "type": "state",
+        "common": {
+            "name":  "Volume",
+            "type":  "string",
+            "role":  "level.volume",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone3.Tune",
+        "type": "state",
+        "common": {
+            "name":  "Tune",
+            "type":  "string",
+            "role":  "state",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone3.NetRadioPreset",
+        "type": "state",
+        "common": {
+            "name":  "Net Radio Preset",
+            "type":  "string",
+            "role":  "state",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone3.InputSelect",
+        "type": "state",
+        "common": {
+            "name":  "Input Select",
+            "type":  "string",
+            "role":  "media.input",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone3.Mute",
+        "type": "state",
+        "common": {
+            "name":  "Input Mute",
+            "type":  "string",
+            "role":  "media.mute",
+            "read":  true,
+            "write": true
+        }
+    },
+    {
+        "_id": "Zone3.TunerPreset",
+        "type": "state",
+        "common": {
+            "name":  "Tuner Preset",
+            "type":  "string",
+            "role":  "state",
+            "read":  true,
+            "write": true
+        }
+    },
+
+
 		{
             "_id": "Device",
             "type": "object",
