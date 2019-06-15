@@ -37,6 +37,9 @@ Example of VIS view
 * VSX-1131   
 
 ## ChangeLog
+###
+* (claudiobertsch) adding Zone3 support
+
 ### 2.0.2
 * (Eisbaeeer) fix double .js 
 
